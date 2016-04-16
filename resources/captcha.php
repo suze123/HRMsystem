@@ -1,6 +1,6 @@
 <?php
 session_start();
-getCode(5,60,23);
+getCode(5,60,20);
 
 function getCode($num,$w,$h) {
 	// 去掉了 0 1 O l 等
@@ -31,11 +31,11 @@ function getCode($num,$w,$h) {
 		imagesetpixel($im, rand(0, $w), rand(0, $h), $black);
 	}
 	//将字符随机显示在画布上,字符的水平间距和位置都按一定波动范围随机生成
-	$strx = rand(3, 8);
+	$strx = rand(2, 6);
 	for ($i = 0; $i < $num; $i++) {
 		$strpos = rand(1, 6);
 		imagestring($im, 5, $strx, $strpos, substr($code, $i, 1), $black);
-		$strx += rand(8, 14);
+		$strx += rand(6, 12);
 	}
 	imagepng($im);
 	imagedestroy($im);
