@@ -6,19 +6,38 @@
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="stylesheet" type="text/css" href="css/login.css" />
 <script type="text/javascript" src="../resources/jquery.min.js"></script>
-<script type="text/javascript" src="../resources/login.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <style type="text/css">
-body{margin:0px 0px;padding:0px 0px;}
-#d_login_bg{width:600px;height:350px;margin:0px auto;}
+body{margin:0px 0px;padding:0px 0px;font-family:"楷体";font-size:1em;background-color:#002A90;}
+#d_login_bg{width:600px;height:350px;margin:0px auto;background-image:url(image/login_s.jpg);padding:0px;}
 table{margin:0px auto;}
 .i_text{width:160px;}
-#img_code{vertical-align:top; width:85px;height:23px;margin-left:8px;}
+#img_code{vertical-align:top; width:85px;height:25px;margin-left:8px;}
+#login_ts{color:red; text-align:center;font-weight:bold;}
+.i_btn{width:77px;height:22px;}
+#t_login{padding:15px;color:white;font-weight:bold;background-image:url(image/login_xs.png);}
+#td_hostname{text-align:center;font-size:32px;font-weight:bold;color:#FFFF00;border-top: 4px solid #00118B;border-bottom:4px solid #00118B;background-color:#032378; filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;}
+#t_login_w{margin:0px;width:100%;}
+#logo{vertical-align:top;}
 </style>
 </head>
 <body>
 	<div id="d_login_bg">
-	    <from id="f_login">
-	    	<table style="border:1px solid red">
+	    <table id="t_login_w">
+	    	<tr>
+	    		
+	    		<td colspan="2" height="80px" id="td_hostname"><div><img id="logo" src="image/logo.png"/><strong>皇冠酒店前台管理系统</strong></div></td>
+	    	</tr>
+	    	<tr>
+	    		<td colspan="2" height="35px"></td>
+	    	</tr>
+	    	<tr>
+	    		<td width="40%"></td>
+	    		<td> <from id="f_login">
+	    	<table id="t_login">
+			    <tr>
+			    	<td id="login_ts" colspan="2">用户名或密码错误！</td>
+			    </tr>
 	    		<tr>
 	    			<td>用户名：</td>
 	    			<td><input class="i_text" type="text" name="name" id="i_name" /></td>
@@ -29,14 +48,18 @@ table{margin:0px auto;}
 	    		</tr>
 	    		<tr>
 	    			<td>验证码：</td>
-	    			<td><input style="width:66px;"class="i_text" type="text" name="captcha" id="i_captcha" /><img id="img_code" src="../resources/captcha.php" title="看不清，点击换一张"/></td>
+	    			<td><input style="width:66px;"class="i_text" type="text" name="captcha" id="i_captcha" /><img id="img_code" src="../resources/captcha.php" title="看不清,点击换一张"/></td>
 	    		</tr>
 	    		<tr><td></td>
-	    			<td  style="float:right;";><input type="submit" name="登 录" id="i_submit" />
-	    			<input type="reset" name="重 置" id="i_reset" /></td>
+	    			<td  style="float:right;";><input class="i_btn" type="submit" value="登 录" id="i_submit" />
+	    			<input class="i_btn" type="reset" value="重 置" id="i_reset" /></td>
 	    		</tr>
 	    	</table>
-	    </from>
+	    </from></td>
+	    	</tr>
+	    </table>
+	    
+	   
 	   
 	</div>
 </body>
