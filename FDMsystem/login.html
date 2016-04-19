@@ -7,26 +7,13 @@
 <link rel="stylesheet" type="text/css" href="css/login.css" />
 <script type="text/javascript" src="../resources/jquery.min.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
-<style type="text/css">
-body{margin:0px 0px;padding:0px 0px;font-family:"楷体";font-size:1em;background-color:#002A90;}
-#d_login_bg{width:600px;height:350px;margin:0px auto;background-image:url(image/login_s.jpg);padding:0px;}
-table{margin:0px auto;}
-.i_text{width:160px;}
-#img_code{vertical-align:top; width:85px;height:25px;margin-left:8px;}
-#login_ts{color:red; text-align:center;font-weight:bold;}
-.i_btn{width:77px;height:22px;}
-#t_login{padding:15px;color:white;font-weight:bold;background-image:url(image/login_xs.png);}
-#td_hostname{text-align:center;font-size:32px;font-weight:bold;color:#FFFF00;border-top: 4px solid #00118B;border-bottom:4px solid #00118B;background-color:#032378; filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;}
-#t_login_w{margin:0px;width:100%;}
-#logo{vertical-align:top;}
-</style>
 </head>
 <body>
 	<div id="d_login_bg">
 	    <table id="t_login_w">
 	    	<tr>
 	    		
-	    		<td colspan="2" height="80px" id="td_hostname"><div><img id="logo" src="image/logo.png"/><strong>皇冠酒店前台管理系统</strong></div></td>
+	    		<td colspan="2" height="80px" id="td_hostname"><img id="logo" src="image/logo.png"/><span id="hostname">皇冠酒店前台管理系统</span></td>
 	    	</tr>
 	    	<tr>
 	    		<td colspan="2" height="35px"></td>
@@ -36,7 +23,7 @@ table{margin:0px auto;}
 	    		<td> <from id="f_login">
 	    	<table id="t_login">
 			    <tr>
-			    	<td id="login_ts" colspan="2">用户名或密码错误！</td>
+			    	<td id="login_ts" colspan="2"></td>
 			    </tr>
 	    		<tr>
 	    			<td>用户名：</td>
@@ -44,7 +31,7 @@ table{margin:0px auto;}
 	    		</tr>
 	    		<tr>
 	    			<td>密&nbsp;&nbsp;码：</td>
-	    			<td><input class="i_text" type="text" name="password" id="i_password" /></td>
+	    			<td><input class="i_text" type="password" name="password" id="i_password" /></td>
 	    		</tr>
 	    		<tr>
 	    			<td>验证码：</td>
