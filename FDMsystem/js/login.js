@@ -7,7 +7,8 @@ var login_ts="请输入用户名和密码！^_^ ";
   $("#login_ts").text(login_ts);
   //重新获取验证码
   $("#img_code").click(function(){
-    $("#img_code").attr("src", "../../resources/captcha.php"); 
+    $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+    $("#i_captcha").focus();
   });
   //重置
   $("#i_reset").click(function(){
@@ -15,7 +16,7 @@ var login_ts="请输入用户名和密码！^_^ ";
 	$("#i_password").val("");
 	$("#i_captcha").val("");
 	$("#i_name").focus();
-	$("#img_code").attr("src", "../../resources/captcha.php"); 
+    $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
   });
   //登录
    $("#i_submit").click(function(){
