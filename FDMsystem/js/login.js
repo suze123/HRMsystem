@@ -21,15 +21,15 @@ var login_ts="请输入用户名和密码！^_^ ";
   });
   //登录
    $("#i_submit").click(function(){
+   
 	var zh=$("#i_name").val();
 	var pwd=$("#i_password").val();
 	var yzm=$("#i_captcha").val();
-	$.post("../php/login.php",{'zh':zh,'pwd':pwd,'yzm':yzm},function(result){
-    alert(result);
-	
-    });
-
-  });
+	$.post("php/login.php",{'zh':zh,'pwd':pwd,'yzm':yzm},function(result){
+        $("#login_ts").text(result);
+        });
+      });
 
   
 });
+
