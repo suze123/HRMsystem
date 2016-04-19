@@ -1,12 +1,12 @@
 body{margin:0px 0px;padding:0px 0px;font-family:"楷体";font-size:1em;background-color:#002A90;}
 #d_login_bg{width:600px;height:350px;margin:0px auto;background-image:url(../image/login_s.jpg);padding:0px;}
 table{margin:0px auto;}
-.i_text{width:160px;}
+.i_text{width:160px;margin:0px;}
 #img_code{vertical-align:top; width:85px;height:25px;margin-left:8px;}
 #login_ts{color:red; text-align:center;font-weight:bold;}
 .i_btn{width:77px;height:27px;background:url(../image/i_btn_bkr.png) no-repeat; border:0px;color:white;}
 .i_btn:hover{color:#F60C2D;background:url(../image/i_btn_bk.png) no-repeat; border:0px;font-weight:bold;font-size:14px;}
-#t_login{height:174px;width:280px;padding:15px;color:white;font-weight:bold;background:url(../image/login_xs.png) no-repeat;}
+#t_login{height:174px;width:275px;padding:15px;color:white;font-weight:bold;background:url(../image/login_xs.png) no-repeat;}
 #td_hostname{text-align:center;font-size:32px;font-weight:bold;color:#FFFF00;border-top: 4px solid #00118B;border-bottom:4px solid #00118B;background-color:#032378; filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity:0.7;opacity:0.7;}
 #t_login_w{margin:0px;width:100%;}
 #logo{vertical-align:top;height:40px;}

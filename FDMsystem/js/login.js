@@ -9,6 +9,7 @@ var login_ts="请输入用户名和密码！^_^ ";
   $("#img_code").click(function(){
     $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
     $("#i_captcha").focus();
+    $("#i_captcha").val("");
   });
   //重置
   $("#i_reset").click(function(){
