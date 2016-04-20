@@ -21,15 +21,75 @@ var login_ts="请输入用户名和密码！^_^ ";
   });
   //登录
    $("#i_submit").click(function(){
-   
-	var zh=$("#i_name").val();
-	var pwd=$("#i_password").val();
-	var yzm=$("#i_captcha").val();
-	$.post("php/login.php",{'zh':zh,'pwd':pwd,'yzm':yzm},function(result){
-        $("#login_ts").text(result);
-        });
-      });
+           var zh=$("#i_name").val();
+           var pwd=$("#i_password").val();
+           var yzm=$("#i_captcha").val();
+           $.post("php/login.php",{'zh':zh,'pwd':pwd,'yzm':yzm},function(result){
+              if(result == 1){
+              $("#login_ts").text("验证码错误！-_-!");
+              $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+              $("#i_password").focus();
+              $("#i_password").val("");
+              $("#i_captcha").val("");
+              };
+              if(result == 2){
+              $("#login_ts").text("用户名或密码错误！-_-!");
+              $("#i_name").focus();
+              $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+              $("#i_captcha").val("");
+              };
+              if(result == 3){
+              $("#login_ts").text("用户名或密码错误！-_-!");
+              $("#i_name").focus();
+              $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+              $("#i_captcha").val("");
+              };
+             if(result == 0){
+              $("#login_ts").text("登录成功！");
+              location.href = "index.html";
+              };
+           });
 
+      });
+    // enter
+    $(function(){
+      document.onkeydown = function(e)
+     {
+        var ev = document.all ? window.event : e;
+        if(ev.keyCode==13)
+        {
+          var zh=$("#i_name").val();
+	  var pwd=$("#i_password").val();
+	  var yzm=$("#i_captcha").val();
+	  $.post("php/login.php",{'zh':zh,'pwd':pwd,'yzm':yzm},function(result){
+             if(result == 1){
+             $("#login_ts").text("验证码错误！-_-!");
+             $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+             $("#i_password").focus();
+             $("#i_password").val("");
+             $("#i_captcha").val("");
+             };
+             if(result == 2){
+             $("#login_ts").text("用户名或密码错误！-_-!");
+             $("#i_name").focus();
+             $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+             $("#i_captcha").val("");
+             };
+             if(result == 3){
+             $("#login_ts").text("用户名或密码错误！-_-!");
+             $("#i_name").focus();
+             $("#img_code").attr("src", "../resources/captcha.php?t="+new Date().getTime());
+             $("#i_captcha").val("");
+             };
+            if(result == 0){
+             $("#login_ts").text("登录成功！");
+             location.href = "index.html";
+             };
+          });
+
+        }
+     }
+   });   
   
 });
 
