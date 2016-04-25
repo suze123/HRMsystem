@@ -16,24 +16,69 @@
    $("#d_body").css("height","460px");
    else
    $("#d_body").css("height",ht + "px");
-   //
+   //close
+   $("#b_close").click(function(){
+   location.href = "login.html";
+   });
+   //menu
+   $("#u_menu").children(":first").css("background-color", "#F2EDE7");
+   $("#u_menu").children(":first").children(":first").css("color", "red");
    
+   
+    $(".btn").click(function(){
+	 $($(this).parent().siblings()).css("background-color", "#8E8E8E");
+	 $(".btn").css("color", "black");
+	 $(this).css("color", "red");
+	 $(this).parent().css("background-color","#F2EDE7");
+   });
 });
+//time
+    showTime();
+function showTime(){ 
+        var show_day=new Array('星期一','星期二','星期三','星期四','星期五','星期六','星期日'); 
+        var time=new Date(); 
+        var year=time.getFullYear(); 
+        var month=time.getMonth(); 
+        var date=time.getDate(); 
+        var day=time.getDay(); 
+        var hour=time.getHours(); 
+        var minutes=time.getMinutes(); 
+        var second=time.getSeconds(); 
+		month+=1; 
+        month<10?month='0'+month:month;         
+        hour<10?hour='0'+hour:hour; 
+        minutes<10?minutes='0'+minutes:minutes; 
+        second<10?second='0'+second:second; 
+        var now_time=year + '年' + month + '月' + date + '日' + ' ' + show_day[day-1] + ' ' + hour + ':' + minutes + ':' + second; 
+       $('#td_time').html(now_time); 
+        setTimeout("showTime();",1000); 
+    } 
 </script>
 <style type="text/css">
 /*主页布局*/
-body{margin:0px;padding:0px;background-color:#F2F2F2;}
+body{margin:0px;padding:0px;background-color:#F8F6F3;}
 #d_bk{width:1250px;background-color:#266FD0;margin:0px auto;padding:0px;}
-#d_head{width:100%;height:100px;background-color:#C6C6C6;text-align:center;font-size:36px;font-family:"楷体";font-weight:bold;color:#840000;line-height:100px;}
+#d_head{width:100%;height:100px;background-color:#ADADAD;font-size:12px;font-family:"宋体";font-weight:bold;color:#272727;}
+#t_head{width:100%;height:100px;background-color:#ADADAD;}
+#t_head_l{width:23%;text-align:right;}
+#t_head_m{width:54%;font-size:36px;text-align:center;font-family:"楷体";font-weight:bold;color:#840000;}
+#t_head_mm{font-size:36px;text-align:center;}
+
+#t_head_r{width:23%;height:15px;text-align:right;}
 #d_body{width:100%;}
-#d_foot{width:100%;height:120px;background-color:yellow;text-align:center;font-size:14px;font-family:"宋体";}
-#d_bd_l{float:left;width:210px;height:100%;background-color:green;}
-#d_bd_r{float:right;width:1040px;height:100%;background-color:blue;}
+#d_foot{width:100%;height:100px;background-color:#9D9D9D;text-align:center;font-size:12px;font-family:"宋体";}
+#d_bd_l{float:left;width:210px;height:100%;background-color:#8E8E8E;}
+#d_bd_r{float:right;width:1040px;height:100%;background-color:#F2EDE7;}
+#b_close{width:60px;height:30px;font-size:12px;}
+
+#td_time{text-align:right;color:black;}
+#username{color:blue;}
 /*菜单*/
 #u_menu{ list-style:none;margin-top:0px;padding:0px;text-align:center;}
-#u_menu li{background-color:green;width:100%;height:64px;line-height:60px;}
-.btn{height:55px; width:80%;}
-#u_menu li:hover {background-color:blue;}
+#u_menu li{background-color:#8E8E8E;width:100%;height:70px;}
+.btn{height:55px; width:80%;font-size:20px;font-weight:bold;margin-top:8px;}
+.btn_f{height:55px; width:80%;font-size:20px;font-weight:bold;margin-top:8px;color:red;}
+
 #u_menu li button:hover {color:red;}
 
 </style>
@@ -41,28 +86,49 @@ body{margin:0px;padding:0px;background-color:#F2F2F2;}
 <body>
   <div id="d_bk">
      <div id="d_head">
-	     <span>皇冠酒店前台管理系统</span>
+		 <table id="t_head">
+		    <tr>
+		 		<td id="t_head_l" ></td>
+				<td id="t_head_m" rowspan="3" align="center"><table style="width:460px;margin-left:120px;">
+					<tr>
+						<td><img src="image/logo.png" alt="" /></td>
+						<td>皇冠酒店前台管理系统</td>
+					</tr>
+				</table></td>
+				<td id="t_head_r"><button id="b_close">注 销</button></td>
+		 	</tr>
+		 	<tr>
+		 		
+		        <td height="36px"></td>
+				<td></td>
+		 	</tr>
+			<tr>
+		 		<td style="color:green;"><span id="username">suze</span>:欢迎您的登录！</td>
+
+				<td id="td_time">2016年04月25日 星期一 13:42:33</td>
+		 	</tr>
+		 </table>
 	 </div>
 	 <div id="d_body">
 	     <div id="d_bd_l">
 		      <ul id="u_menu">
 		 	        <li>
-					    <button id="b_btn1" class="btn">菜单一</button>
+					    <button id="b_btn1" class="btn" >首 页</button>
 					</li>
 					<li>
-					    <button id="b_btn1" class="btn">菜单二</button>
+					    <button id="b_btn1" class="btn">订 房</button>
 					</li>
 					<li>
-					    <button id="b_btn1" class="btn">菜单三</button>
+					    <button id="b_btn1" class="btn">查 询</button>
 					</li>
 					<li>
-					    <button id="b_btn1" class="btn">菜单四</button>
+					    <button id="b_btn1" class="btn">账 目</button>
 					</li>
 					<li>
-					    <button id="b_btn1" class="btn">菜单五</button>
+					    <button id="b_btn1" class="btn">会 员</button>
 					</li>
 					<li>
-					    <button id="b_btn1" class="btn">菜单六</button>
+					    <button id="b_btn1" class="btn">退 房</button>
 				    </li>
 		      </ul>
 		 </div>
